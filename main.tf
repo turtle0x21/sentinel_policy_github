@@ -25,7 +25,7 @@ provider "aws" {
 
 resource "aws_instance" "sentinel_test" {
   ami           = "YOUR_AMI_ID"
-  instance_type = "t3.small"
+  instance_type = "t2.micro"
 
   tags = {
     Name        = "sentinel-ec2-test"
@@ -48,7 +48,7 @@ resource "aws_security_group" "sentinel_test_sg" {
     to_port     = 22
     protocol    = "tcp"
 
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["10.0.0.0/16"]
   }
 
   egress {
@@ -56,7 +56,7 @@ resource "aws_security_group" "sentinel_test_sg" {
     to_port     = 0
     protocol    = "-1"
 
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["10.0.0.0/16"]
   }
 
   tags = {
