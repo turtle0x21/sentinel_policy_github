@@ -3,7 +3,7 @@ terraform {
     organization = "sentinel_policy"
 
     workspaces {
-      name = "sentinel_practice"
+      name = "github_sentinel_practice"
     }
   }
 
@@ -20,11 +20,10 @@ provider "aws" {
 }
 
 resource "aws_instance" "sentinel_test" {
-  ami           = "ami-0f58b397bc5c1f2e8"
+  ami           = "YOUR_AP_SOUTH_1_AMI"
   instance_type = "t2.micro"
 
   tags = {
-    Name        = "sentinel-github-test"
-    Environment = "practice"
+    Name = "sentinel-github-test"
   }
 }
