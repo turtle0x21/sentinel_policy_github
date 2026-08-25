@@ -3,7 +3,7 @@ terraform {
     organization = "sentinel_policy"
 
     workspaces {
-      name = "sentinel_policy_github"
+      name = "sentinel_policies"
     }
   }
 
@@ -25,7 +25,7 @@ provider "aws" {
 
 resource "aws_instance" "sentinel_test" {
   ami           = "YOUR_AMI_ID"
-  instance_type = "t2.micro"
+  instance_type = "t3.small"
 
   tags = {
     Name        = "sentinel-ec2-test"
