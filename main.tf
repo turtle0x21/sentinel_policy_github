@@ -65,3 +65,13 @@ resource "aws_security_group" "sentinel_test_sg" {
   }
 }
 
+resource "aws_ebs_volume" "sentinel_test_volume" {
+  availability_zone = "ap-south-1a"
+  size              = 10
+  encrypted         = false
+
+  tags = {
+    Name        = "sentinel-ebs-test"
+    Environment = "practice"
+  }
+}
