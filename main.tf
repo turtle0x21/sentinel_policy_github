@@ -3,7 +3,7 @@ terraform {
     organization = "sentinel_policy"
 
     workspaces {
-      name = "github_sentinel_practice"
+      name = "sentinel_policy_github"
     }
   }
 
